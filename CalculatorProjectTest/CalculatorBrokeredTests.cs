@@ -7,8 +7,18 @@ namespace CalculatorProjectTest
 {
     public class CalculatorBrokeredTests : BrokeredServiceContractTestBase<ICalculator, MockCalculator>
     {
-        public CalculatorBrokeredTests(ITestOutputHelper logger) : base(logger, CalculatorDescriptor.CalculatorService)
+        public CalculatorBrokeredTests(ITestOutputHelper logger) : base(logger, Descriptors.CalculatorService)
         {
+        }
+
+        [Fact]
+        public async Task TestNewTotalAsync()
+        {
+            await this.AssertEventRaisedAsync<int>(
+                addHandler: (p, h) => p.NewTotal += h, 
+                removeHandler: (p, h) => p.NewTotal -= h,
+                triggerEvent: s => s.RaiseNewTotal(50),
+                argsAssertions: a => Assert.Equal(50, a));
         }
 
         [Fact]
