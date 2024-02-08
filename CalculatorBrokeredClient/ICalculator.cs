@@ -1,4 +1,8 @@
-﻿namespace CalculatorProject
+﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace CalculatorProject
 {
     public interface ICalculator : IDisposable
     {

@@ -1,9 +1,4 @@
 ﻿using CalculatorProject;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CalculatorProjectTest
 {
@@ -22,6 +17,10 @@ namespace CalculatorProjectTest
         public ValueTask<double> SubtractAsync(double a, double b, CancellationToken cancellationToken)
         {
             return ValueTask.FromResult(a - b);
+        }
+
+        public void Dispose()
+        {
         }
     }
 }

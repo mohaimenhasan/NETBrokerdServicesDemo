@@ -7,7 +7,8 @@ namespace CalculatorProjectTest
 {
     public class CalculatorBrokeredTests : BrokeredServiceContractTestBase<ICalculator, MockCalculator>
     {
-        public CalculatorBrokeredTests(ITestOutputHelper logger) : base(logger, Descriptors.CalculatorService)
+        public CalculatorBrokeredTests(ITestOutputHelper logger) 
+            : base(logger, Descriptors.CalculatorService)
         {
         }
 

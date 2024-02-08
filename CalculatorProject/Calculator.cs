@@ -5,25 +5,20 @@ namespace CalculatorProject
     internal class Calculator : ICalculator
     {
         private readonly State state;
-        public static readonly ServiceMoniker Moniker = new("Mohaimen.CoolExtension.Calculator", new Version("1.0"));
+        public static readonly ServiceMoniker Moniker = new("CalculatorProject");
 
 
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         internal Calculator(State state)
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
             this.state = state;
         }
 
-        public event EventHandler<int> NewTotal
-        {
-            add
-            {
-                throw new NotImplementedException();
-            }
+        public event EventHandler<int> NewTotal;
 
-            remove
-            {
-                throw new NotImplementedException();
-            }
+        public void Dispose()
+        {
         }
 
         public ValueTask<double> AddAsync(double a, double b, CancellationToken cancellationToken)

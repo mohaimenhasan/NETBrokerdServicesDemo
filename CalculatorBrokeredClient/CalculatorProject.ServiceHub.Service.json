@@ -1,0 +1,8 @@
+{
+  "host": "dotnet",
+  "hostId": "Calculator",
+  "entryPoint": {
+    "assemblyPath": "ServiceHub\\Services\\ServiceHubService\\CalculatorProject.dll",
+    "fullClassName": "CalculatorProject.CalculatorFactory"
+  }
+}
